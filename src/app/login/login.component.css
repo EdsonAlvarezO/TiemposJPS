@@ -1,0 +1,44 @@
+.logout{
+	display: flex;
+	justify-content: flex-end;
+	margin: 5px;
+}
+.user{
+	margin: 10px;
+	color: #ffffff;
+
+}
+.login{
+	width: 50;
+	height: 500;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 250px;
+}
+.userI{
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+}
+.sorteoI{
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+}
+.card{
+	width: 18rem;
+	margin: 10px;
+	align-items: center;
+}
+.jps{
+	color: #ffffff ;
+	margin: 20px;
+}
+.log{
+	display: flex;
+	align-items: center;
+	height: 700px;
+	justify-content: center;
+
+}

@@ -1,0 +1,24 @@
+
+	<div *ngIf="afAuth.user | async as user; else showLogin">
+		  <div  class = "logout">
+		      <h5 class="user"> {{ user.displayName }}</h5>
+		      <button  class="btn btn-primary"  (click)="logout()" >Logout</button>
+	       </div>
+	       <div class="card" >
+			  <img class="card-img-top" src="./assets/sorteo.jpg" alt="Card image cap">
+			  <div class="card-body">
+			    <a class="btn btn-info" routerLink="/sorteos" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sorteo</a>
+			  </div>
+	       </div>
+
+	 </div>
+	<ng-template #showLogin >
+		<div class="log">
+			<div class="jps">
+				<span class="d-flex flex-row"><p class="jps">Junta de Protecion Social</p></span>
+			</div> 
+			<div >
+				 <button class="btn btn-primary btn-lg" (click)="login()">Login with Google</button>
+			</div>  
+		</div>        
+	</ng-template>
