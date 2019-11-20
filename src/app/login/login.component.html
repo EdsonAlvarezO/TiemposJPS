@@ -7,13 +7,13 @@
 							  <div class="collapse navbar-collapse" id="navbarNav">
 							    <ul class="navbar-nav">
 								      <li class="nav-item active">
-								        <a class="nav-link" routerLink="/sorteos" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">SORTEOS</a>
+								        <a (click)="des()" class="nav-link" routerLink="/sorteos" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">SORTEOS</a>
 								      </li>
 								      <li class="nav-item">
-								        <a class="nav-link" routerLink="/sorteos" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">NOCE</a>
+								        <a (click)="des()" class="nav-link" routerLink="/sorteos" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">NOCE</a>
 								      </li>
 								      <li class="nav-item">
-								        <a class="nav-link" routerLink="/sorteos" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">NOCE</a>
+								        <a (click)="des()" class="nav-link" routerLink="/sorteos" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">NOCE</a>
 								      </li>
 							    </ul>
 							    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
@@ -24,7 +24,40 @@
 										</ul>
 							  </div>
 				</nav>
+				<ngb-carousel *ngIf="mostrarCarrusel" >
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img class= "img"src="./assets/acu.png" alt="Random first slide">
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img class= "img" src = "./assets/lot.jpg" alt="Random second slide">
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img class= "img" src = "http://www.camarabrunca.com/wp-content/uploads/2017/09/pega1_logo.png" alt="Random third slide">
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img class= "img" src = "https://i.ytimg.com/vi/_VDyDD4N7yc/hqdefault.jpg" alt="Random third slide">
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img class= "img" src = "http://www.jps.go.cr/sites/all/themes/jps/images/logo_loteria.jpg" alt="Random third slide">
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img class= "img" src = "https://cibelae.net/wp-content/uploads/2018/09/logo-JPS.png" alt="Random third slide">
+    </div>
+  </ng-template>
+</ngb-carousel>
 </div>
+
 <ng-template #showLogin >
 		<div class="log">
 			<div class="jps">

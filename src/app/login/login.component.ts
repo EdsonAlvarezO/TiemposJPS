@@ -11,10 +11,11 @@ import { Observable } from 'rxjs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+   public mostrarCarrusel:boolean;
   sorteos: Observable<any[]>;
   constructor(public afAuth: AngularFireAuth,db: AngularFirestore) {
     this.sorteos = db.collection('Sorteos').valueChanges();
+    this.mostrarCarrusel = true;
 
    }
 
@@ -27,5 +28,7 @@ export class LoginComponent implements OnInit {
   logout() {
     this.afAuth.auth.signOut();
   }
-
+  des(){
+    this.mostrarCarrusel = false;
+  }
 }

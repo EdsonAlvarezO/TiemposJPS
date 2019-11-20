@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sorteo.component.css']
 })
 export class SorteoComponent implements OnInit {
-
-  constructor() { }
+	
+  constructor() {
+  	
+   }
 
   ngOnInit() {
   }
-
+  
 }
