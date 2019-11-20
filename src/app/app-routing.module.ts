@@ -6,7 +6,7 @@ import { SorteoComponent } from './sorteo/sorteo.component';
 
 
 const routes: Routes = [
-	{path: "", component:LoginComponent},
+	{path: "login", component: LoginComponent},
 	{path: "sorteos", component:SorteoComponent}
 
 ];

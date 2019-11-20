@@ -1,18 +1,31 @@
-
-	<div *ngIf="afAuth.user | async as user; else showLogin">
-		  <div  class = "logout">
-		      <h5 class="user"> {{ user.displayName }}</h5>
-		      <button  class="btn btn-primary"  (click)="logout()" >Logout</button>
-	       </div>
-	       <div class="card" >
-			  <img class="card-img-top" src="./assets/sorteo.jpg" alt="Card image cap">
-			  <div class="card-body">
-			    <a class="btn btn-info" routerLink="/sorteos" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sorteo</a>
-			  </div>
-	       </div>
-
-	 </div>
-	<ng-template #showLogin >
+<div *ngIf="afAuth.user | async as user; else showLogin">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				  <a class="navbar-brand" href="#">JUNTA DE PROTECCION SOCIAL</a>
+				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				  </button>
+							  <div class="collapse navbar-collapse" id="navbarNav">
+							    <ul class="navbar-nav">
+								      <li class="nav-item active">
+								        <a class="nav-link" routerLink="/sorteos" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">SORTEOS</a>
+								      </li>
+								      <li class="nav-item">
+								        <a class="nav-link" routerLink="/sorteos" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">NOCE</a>
+								      </li>
+								      <li class="nav-item">
+								        <a class="nav-link" routerLink="/sorteos" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">NOCE</a>
+								      </li>
+							    </ul>
+							    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+										   <div  class="form-inline my-2 my-lg-0">
+										      				<h5 class="user"> {{ user.displayName }}</h5>
+												        <button  class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"  (click)="logout()" >Logout</button>
+												 </div>
+										</ul>
+							  </div>
+				</nav>
+</div>
+<ng-template #showLogin >
 		<div class="log">
 			<div class="jps">
 				<span class="d-flex flex-row"><p class="jps">Junta de Protecion Social</p></span>
@@ -21,4 +34,5 @@
 				 <button class="btn btn-primary btn-lg" (click)="login()">Login with Google</button>
 			</div>  
 		</div>        
-	</ng-template>
+</ng-template>
+
