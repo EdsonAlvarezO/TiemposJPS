@@ -1,1 +1,41 @@
-<p>sorteo works!</p>
+
+<div *ngIf ="sorteos?.length >0; else noSorteos">
+	<div *ngFor="let sorteo of sorteos" class="toDO">
+		 <div class = "sorteo">
+		 <p>{{sorteo.name}}</p>
+		 <p>{{sorteo.date}}</p>
+		  <div class="btnS">
+		  	<button (click)= "delete($event, sorteo)" class="btn btn-danger"  id="btn">Eliminar</button>
+		    <button *ngIf="!editando" (click)="editSorteo($event, sorteo)" id="btn" class="btn btn-primary" formSor>Modificar</button>
+		    <button type="button" class="btn btn-info"  id="btn" (click)="clear()">Nuevo</button>
+		  </div>
+		</div>
+	</div>
+</div>
+<form (ngSubmit)="onGuardarSorteo(formSor)" #formSor="ngForm" class="formSorteo">
+  <h4 class="title">Sorteo</h4>
+  <div class="form-group">
+    <label >Nombre del sorteo</label>
+    <input [(ngModel)] = "currentSorteo.name" [ngModelOptions]="{standalone: true}" type="text" class="form-control"  placeholder="Nombre del sorteo">
+  </div>
+  <div class="form-group">
+    <label >Fecha de finalizacion</label>
+    <input  type="date" class="form-control"  placeholder="Fecha de finalizacion">
+  </div>
+  <div class="form-group">
+    <label >Hora de finalizacion</label>
+    <input type="time" class="form-control"  placeholder="Hora de finalizacion">
+  </div>
+  <div class="form-check">
+    <input [(ngModel)] = "currentSorteo.active" [ngModelOptions]="{standalone: true}" checked="currentSorteo.active" type="checkbox" class="form-check-input">
+    <label class="form-check-label" for="exampleCheck1">Activo</label>
+  </div>
+  <button *ngIf="!editando" type="submit" id="btnGuardar" class="btn btn-primary">Guardar</button>
+  <button type="submit" *ngIf="editando" id="btnGuardar" class="btn btn-primary" (click)="update()">Actualizar</button>
+</form>
+
+<ng-template  #noSorteos>
+		<div class="alert alert-info" id="noEx" role="alert">
+  			No Existen Sorteos
+		</div>
+</ng-template>

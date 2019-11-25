@@ -12,7 +12,8 @@ import { Observable } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
    public mostrarCarrusel:boolean;
-  sorteos: Observable<any[]>;
+   sorteos: Observable<any[]>;
+
   constructor(public afAuth: AngularFireAuth,db: AngularFirestore) {
     this.sorteos = db.collection('Sorteos').valueChanges();
     this.mostrarCarrusel = true;
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+
   }
   logout() {
     this.afAuth.auth.signOut();

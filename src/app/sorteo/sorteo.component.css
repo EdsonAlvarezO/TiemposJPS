@@ -1,0 +1,41 @@
+.sorteo{
+
+	background-color: #E2E4E7;
+	margin: 10px;
+	width: 18rem;
+
+}
+.toDO{
+	display: flex;
+	align-self: flex-end;
+}
+.formSorteo{
+	background-color: #E2E4E7;
+	margin: 10px;
+}
+.form-group{
+	margin: 20px;
+	width: 300px
+}
+#btnGuardar{
+	margin: 20px;
+
+}
+.form-check{
+	margin: 20px;
+}
+.title{
+	display: flex;
+	justify-content: center;
+}
+#noEx{
+	margin: 40px;
+}
+.btnS{
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+}
+#btn{
+	margin: 5px;
+}
